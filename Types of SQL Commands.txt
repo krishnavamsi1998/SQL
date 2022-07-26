@@ -1,0 +1,106 @@
+Types of SQL commands :
+
+DDL(Data Definition Language)
+
+Used to create or chnage the structure of databse
+
+ex :
+
+1.CREATE :
+
+CREATE TABLE EMPLOYEE(Name VARCHAR2(20), Email VARCHAR2(100), DOB DATE);  
+
+2. DROP :
+
+DROP TABLE EMPLOYEE;  
+
+3. TRUNCATE :
+
+TRUNCATE TABLE EMPLOYEE;  
+
+4. ALTER :
+
+ALTER TABLE STU_DETAILS ADD(ADDRESS VARCHAR2(20));  
+ALTER TABLE STU_DETAILS MODIFY (NAME VARCHAR2(20));  
+
+**Truncate deletes the data in the table while keeping its structure 
+
+But , Drop deletes the data as well as the structure , whole table
+
+**These DDL are auto-committed that means it permanently save all the changes in the database.
+
+->
+
+DML (Data Manipulation Language ) 
+
+Used to maintain the data in the database or in the table
+
+1.INSERT :
+
+INSERT INTO javatpoint (Author, Subject) VALUES ("Sonoo", "DBMS");  
+
+2.UPDATE:
+
+UPDATE students    
+SET User_Name = 'Sonoo'    
+WHERE Student_Id = '3'  
+
+3. DELETE 
+
+DELETE FROM javatpoint  
+WHERE Author="Sonoo";  
+
+**The command of DML is not auto-committed that means it can't permanently save all the changes in the database. They can be rollback.
+
+
+
+->
+
+DCL (Data Control Language)
+
+DCL commands are used to grant and take back authority from any database user.
+
+1.GRANT :
+
+It is used to give user access privileges to a database.
+
+GRANT SELECT, UPDATE ON MY_TABLE TO SOME_USER, ANOTHER_USER; 
+
+2.REVOKE :
+
+ It is used to take back permissions from the user.
+
+REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2;  
+
+->
+
+TCL (Transaction Control Language)
+
+TCL commands can only use with DML commands like INSERT, DELETE and UPDATE only.
+
+1.COMMIT
+
+Commit command is used to save all the transactions to the database.
+
+DELETE FROM CUSTOMERS  
+WHERE AGE = 25;  
+COMMIT;  
+
+2.ROLLBACK
+
+Rollback command is used to undo transactions that have not already been saved to the database.
+
+DELETE FROM CUSTOMERS  
+WHERE AGE = 25;  
+ROLLBACK;  
+
+3.SAVEPOINT
+
+It is used to roll the transaction back to a certain point without rolling back the entire transaction.
+
+SAVEPOINT SAVEPOINT_NAME;  
+
+
+
+
+
